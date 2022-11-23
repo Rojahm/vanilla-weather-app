@@ -13,11 +13,20 @@ let months = [
   "Nov",
   "Dec",
 ];
+let days = [
+  "Sunday",
+  "Monday",
+  "Thuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
 console.log(date);
 console.log(date.getDate());
-console.log(date.getDay());
-console.log(date.getMonth());
-console.log(date.getFullYear());
+document.querySelector("#day").innerHTML = days[date.getDay()];
+document.querySelector("#month").innerHTML = months[date.getMonth()];
+document.querySelector("#year").innerHTML = date.getFullYear();
 console.log(date.getHours());
 console.log(date.getMinutes());
 
