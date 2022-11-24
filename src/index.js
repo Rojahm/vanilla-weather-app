@@ -1,3 +1,4 @@
+// time and date part
 let date = new Date();
 let months = [
   "Jan",
@@ -36,6 +37,7 @@ if (minute < 10) {
 }
 document.querySelector("#hour").innerHTML = `${hour}:${minute}`;
 
+// temperature part
 function showTempreture(response) {
   console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.city;
@@ -90,3 +92,5 @@ function getCurrent() {
 
 let currentBtn = document.querySelector("#current-weather");
 currentBtn.addEventListener("click", getCurrent);
+
+// conversion part
