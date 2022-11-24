@@ -39,7 +39,6 @@ document.querySelector("#hour").innerHTML = `${hour}:${minute}`;
 
 // temperature part
 function showTempreture(response) {
-  console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.city;
   document.querySelector("#country").innerHTML = response.data.country;
   document.querySelector("#weather-description").innerHTML =
@@ -63,9 +62,20 @@ function showTempreture(response) {
   );
 }
 let apiKey = "a7c7f51a8a5abc24e0tb69o4ff6018a3";
-let apiUrl = "https://api.shecodes.io/weather/v1/current";
+let apiEndpoint = "https://api.shecodes.io/weather/v1/current";
 let apiQuery = "Berlin";
-axios.get(`${apiUrl}?query=${apiQuery}&key=${apiKey}`).then(showTempreture);
+let apiUrl = `${apiEndpoint}?query=${apiQuery}&key=${apiKey}`;
+axios.get(apiUrl).then(showTempreture);
+
+function searchForCity(event) {
+  event.preventDefault();
+  apiQuery = document.querySelector("#input").value;
+  apiUrl = `${apiEndpoint}?query=${apiQuery}&key=${apiKey}`;
+
+  axios.get(apiUrl).then(showTempreture);
+}
+let form = document.querySelector("#search");
+form.addEventListener("submit", searchForCity);
 
 function showCurrentWeather(position) {
   let lat = position.coords.latitude;
@@ -77,15 +87,6 @@ function showCurrentWeather(position) {
   axios.get(apiUrl).then(showTempreture);
 }
 
-function searchForCity(event) {
-  event.preventDefault();
-  let apiKey = "a7c7f51a8a5abc24e0tb69o4ff6018a3";
-  let apiUrl = "https://api.shecodes.io/weather/v1/current";
-  let apiQuery = document.querySelector("#input").value;
-  axios.get(`${apiUrl}?query=${apiQuery}&key=${apiKey}`).then(showTempreture);
-}
-let form = document.querySelector("#search");
-form.addEventListener("submit", searchForCity);
 function getCurrent() {
   navigator.geolocation.getCurrentPosition(showCurrentWeather);
 }

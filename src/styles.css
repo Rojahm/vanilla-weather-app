@@ -107,7 +107,9 @@ h2 {
   margin: 0;
   font-size: 18px;
   padding-top: 6px;
+  padding-left: 11px;
 }
+
 .weather .tempreture div h1 {
   font-size: 60px;
   line-height: 1;
@@ -138,5 +140,18 @@ a {
   font-weight: 900;
   color: #c51350;
 }
+.celsius,
+.fahrenheit {
+  font-size: 18px;
+  text-decoration: none;
+}
+.celsius,
+.fahrenheit:hover {
+  cursor: auto;
+}
 .active {
+  color: #c51350;
+}
+.active:hover {
+  cursor: pointer;
 }
