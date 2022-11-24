@@ -12,13 +12,14 @@ h3 {
   color: #4f012a;
 }
 h1 {
+  font-family: "Archivo Black", sans-serif;
   font-weight: 900;
   font-size: 42px;
   margin: 0;
 }
 h2 {
   margin: 0;
-  font-size: 25px;
+  font-size: 22px;
 }
 h3 {
   font-size: 18px;
@@ -55,6 +56,9 @@ h3 {
   font-size: 17px;
   padding: 8px;
 }
+.search form input:focus-visible {
+  outline-color: orange;
+}
 .search form .submit {
   border-radius: 10px;
   padding: 14px 25px;
@@ -79,37 +83,35 @@ h3 {
   width: 700px;
 }
 .city {
-  width: 40%;
+  width: 70%;
 }
 .city h1 {
-  font-size: 60px;
+  font-size: 31px;
 }
-.info .weather {
-  display: flex;
-  width: 60%;
-  position: relative;
-  right: -150px;
-}
-.info .weather .icon {
-  width: 25%;
-  text-align: right;
-}
-.info .weather .icon img {
-  width: 100%;
-}
-.info .weather .info {
-  display: block;
-  width: auto;
-}
-.info .weather .info .tempreture {
-  display: flex;
-}
-.info .weather .info .tempreture h1 {
-  font-size: 70px;
-}
-.info .weather .info .detail {
+.weather {
+  width: 31%;
   text-align: center;
 }
+.weather .tempreture {
+  display: flex;
+}
+.weather .tempreture div {
+  display: flex;
+}
+
+.weather .tempreture .icon {
+  width: 34%;
+}
+.weather .tempreture .icon img {
+  width: 100%;
+}
+.weather .tempreture div h3 {
+  margin: 0;
+}
+.weather .tempreture div h1 {
+  font-size: 60px;
+}
+
 .forecast {
   margin: 30px auto;
 }
