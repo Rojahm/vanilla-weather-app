@@ -81,13 +81,13 @@ h2 {
   width: 700px;
 }
 .city {
-  width: 70%;
+  width: 64%;
 }
 .city h1 {
   font-size: 31px;
 }
 .weather {
-  width: 31%;
+  width: 36%;
   text-align: center;
 }
 .weather .tempreture {
@@ -102,6 +102,8 @@ h2 {
 }
 .weather .tempreture .icon img {
   width: 100%;
+  position: relative;
+  top: -11px;
 }
 .weather .tempreture div h3 {
   margin: 0;
@@ -114,7 +116,10 @@ h2 {
   font-size: 60px;
   line-height: 1;
 }
-
+.weather .detail {
+  position: relative;
+  top: -21px;
+}
 .forecast {
   margin: 30px auto;
 }
